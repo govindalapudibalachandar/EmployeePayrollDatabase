@@ -201,6 +201,17 @@ mysql> select * from employee_payroll;
 |  6 | swamy | m      |  40000 | 2012-02-18 |
 +----+-------+--------+--------+------------+
 6 rows in set (0.00 sec)
+==================================================================================
+#UC7------->Ability to find sum of salary and no of males and femails
+====================================================================================
+mysql> SELECT SUM(salary) FROM employee_payroll
+    -> WHERE gender = 'm' GROUP BY gender;
++-------------+
+| SUM(salary) |
++-------------+
+|      270000 |
++-------------+
+1 row in set (0.00 sec)
 
 
 
