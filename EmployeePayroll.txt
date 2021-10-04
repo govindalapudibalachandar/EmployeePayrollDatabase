@@ -14,3 +14,24 @@ owners.
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> Welcome to EmployeePayRollDataBase
+==============================================================
+#UC1-->Created PayrollService
+==============================================================
+mysql>  create database payroll_service;
+ERROR 1007 (HY000): Can't create database 'payroll_service'; database exists
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| addressbook        |
+| balu               |
+| client             |
+| dance              |
+| employee_payroll   |
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| sys                |
++--------------------+
+10 rows in set (0.00 sec)
