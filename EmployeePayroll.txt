@@ -35,3 +35,25 @@ mysql> show databases;
 | sys                |
 +--------------------+
 10 rows in set (0.00 sec)
+=================================================================================================
+#uc2---->createdTable
+=================================================================================================
+mysql> use payroll_service;
+Database changed
+mysql> create table employee_payroll(
+    -> id int auto_increment primary key,
+    -> name varchar(150) not null,
+    -> salary decimal not null,
+    -> start_date date );
+Query OK, 0 rows affected (0.51 sec)
+
+mysql> desc employee_payroll;
++------------+---------------+------+-----+---------+----------------+
+| Field      | Type          | Null | Key | Default | Extra          |
++------------+---------------+------+-----+---------+----------------+
+| id         | int           | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(150)  | NO   |     | NULL    |                |
+| salary     | decimal(10,0) | NO   |     | NULL    |                |
+| start_date | date          | YES  |     | NULL    |                |
++------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.20 sec)
