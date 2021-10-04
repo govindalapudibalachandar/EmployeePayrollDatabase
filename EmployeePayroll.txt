@@ -145,5 +145,62 @@ mysql> select *from employee_payroll where start_date between cast('2018-01-01'a
 |  5 | kiran |  20000 | 2019-06-12 |
 +----+-------+--------+------------+
 5 rows in set (0.00 sec)
+===================================================================================================
+#UC6------->AddGender
+====================================================================================================
+mysql> alter table employee_payroll add gender char not null after name;
+Query OK, 0 rows affected (1.63 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-------+--------+--------+------------+
+| id | name  | gender | salary | start_date |
++----+-------+--------+--------+------------+
+|  1 | bala  |        |  30000 | 2021-10-04 |
+|  2 | bannu |        |  50000 | 2021-10-04 |
+|  3 | pandu |        |  60000 | 2021-10-04 |
+|  4 | phani |        |  70000 | 2018-07-21 |
+|  5 | kiran |        |  20000 | 2019-06-12 |
+|  6 | swamy |        |  40000 | 2012-02-18 |
++----+-------+--------+--------+------------+
+6 rows in set (0.00 sec)
+
+mysql> update employee_payroll set gender ='m' where name = 'bala';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender ='m' where name = 'bannu';
+Query OK, 1 row affected (0.16 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender ='m' where name = 'pandu';
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender ='m' where name = 'phani';
+Query OK, 1 row affected (0.15 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender ='m' where name = 'kiran';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender ='m' where name = 'swamy';
+Query OK, 1 row affected (0.24 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-------+--------+--------+------------+
+| id | name  | gender | salary | start_date |
++----+-------+--------+--------+------------+
+|  1 | bala  | m      |  30000 | 2021-10-04 |
+|  2 | bannu | m      |  50000 | 2021-10-04 |
+|  3 | pandu | m      |  60000 | 2021-10-04 |
+|  4 | phani | m      |  70000 | 2018-07-21 |
+|  5 | kiran | m      |  20000 | 2019-06-12 |
+|  6 | swamy | m      |  40000 | 2012-02-18 |
++----+-------+--------+--------+------------+
+6 rows in set (0.00 sec)
+
 
 
