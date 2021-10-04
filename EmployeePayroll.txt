@@ -100,4 +100,50 @@ mysql> select * from employee_payroll;
 +----+-------+--------+------------+
 3 rows in set (0.06 sec)
 
+==========================================================================================================
+#uc5--->WhereOperation
+==========================================================================================================
+mysql> insert into employee_payroll(name, salary, start_date)values("phani", 70000, "2018-7-21");
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into employee_payroll(name, salary, start_date)values("kiran", 20000, "2019-6-12");
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into employee_payroll(name, salary, start_date)values("swamy", 40000, "2012-02-18");
+Query OK, 1 row affected (0.11 sec)
+
+mysql> select * from employee_payroll;
++----+-------+--------+------------+
+| id | name  | salary | start_date |
++----+-------+--------+------------+
+|  1 | bala  |  30000 | 2021-10-04 |
+|  2 | bannu |  50000 | 2021-10-04 |
+|  3 | pandu |  60000 | 2021-10-04 |
+|  4 | phani |  70000 | 2018-07-21 |
+|  5 | kiran |  20000 | 2019-06-12 |
+|  6 | swamy |  40000 | 2012-02-18 |
++----+-------+--------+------------+
+6 rows in set (0.02 sec)
+
+mysql> select salary from employee_payroll where name='pandu';
++--------+
+| salary |
++--------+
+|  60000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select *from employee_payroll where start_date between cast('2018-01-01'as date) and date(now())
+    -> ;
++----+-------+--------+------------+
+| id | name  | salary | start_date |
++----+-------+--------+------------+
+|  1 | bala  |  30000 | 2021-10-04 |
+|  2 | bannu |  50000 | 2021-10-04 |
+|  3 | pandu |  60000 | 2021-10-04 |
+|  4 | phani |  70000 | 2018-07-21 |
+|  5 | kiran |  20000 | 2019-06-12 |
++----+-------+--------+------------+
+5 rows in set (0.00 sec)
+
 
